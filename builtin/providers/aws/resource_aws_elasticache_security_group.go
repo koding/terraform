@@ -132,9 +132,6 @@ func resourceAwsElasticacheSecurityGroupDelete(d *schema.ResourceData, meta inte
 			switch apierr.Code() {
 			case "InvalidCacheSecurityGroupState":
 				return resource.RetryableError(err)
-			case "DependencyViolation":
-				// If it is a dependency violation, we want to retry
-				return resource.RetryableError(err)
 			default:
 				return resource.NonRetryableError(err)
 			}

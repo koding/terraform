@@ -437,8 +437,6 @@ func resourceAwsVpcDelete(d *schema.ResourceData, meta interface{}) error {
 		switch ec2err.Code() {
 		case "InvalidVpcID.NotFound":
 			return nil
-		case "DependencyViolation":
-			return resource.RetryableError(err)
 		}
 
 		return resource.NonRetryableError(fmt.Errorf("Error deleting VPC: %s", err))
