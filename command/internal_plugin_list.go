@@ -75,10 +75,6 @@ import (
 	vaultprovider "github.com/hashicorp/terraform/builtin/providers/vault"
 	vcdprovider "github.com/hashicorp/terraform/builtin/providers/vcd"
 	vsphereprovider "github.com/hashicorp/terraform/builtin/providers/vsphere"
-	chefprovisioner "github.com/hashicorp/terraform/builtin/provisioners/chef"
-	fileprovisioner "github.com/hashicorp/terraform/builtin/provisioners/file"
-	localexecprovisioner "github.com/hashicorp/terraform/builtin/provisioners/local-exec"
-	remoteexecprovisioner "github.com/hashicorp/terraform/builtin/provisioners/remote-exec"
 
 	"github.com/hashicorp/terraform/plugin"
 	"github.com/hashicorp/terraform/terraform"
@@ -159,12 +155,7 @@ var InternalProviders = map[string]plugin.ProviderFunc{
 	"vsphere":      vsphereprovider.Provider,
 }
 
-var InternalProvisioners = map[string]plugin.ProvisionerFunc{
-	"chef":        chefprovisioner.Provisioner,
-	"file":        fileprovisioner.Provisioner,
-	"local-exec":  localexecprovisioner.Provisioner,
-	"remote-exec": remoteexecprovisioner.Provisioner,
-}
+var InternalProvisioners = map[string]plugin.ProvisionerFunc{}
 
 func init() {
 	// New Provider Layouts
