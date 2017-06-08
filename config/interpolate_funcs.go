@@ -73,7 +73,6 @@ func Funcs() map[string]ast.Function {
 		"dirname":      interpolationFuncDirname(),
 		"distinct":     interpolationFuncDistinct(),
 		"element":      interpolationFuncElement(),
-		"file":         interpolationFuncFile(),
 		"matchkeys":    interpolationFuncMatchKeys(),
 		"floor":        interpolationFuncFloor(),
 		"format":       interpolationFuncFormat(),
